@@ -1,32 +1,30 @@
-# tuple
-is_tuple = (1, 2, 3, 4, 5)
-print(type(is_tuple))
+# tuple unpacking
+num_tuple = (10, 20)
+print(num_tuple) # (10, 20)
 
-# is_tuple[0] = 100 # typeerror tuple object does not support item assignment
-# value cannot be changed
-print(is_tuple[0]) # 1
-print(is_tuple[-1]) # 5
-print(is_tuple[2:5]) # 3, 4, 5
-print(is_tuple) # 1, 2, 3, 4, 5
-print(is_tuple.index(5)) # 4
-print(is_tuple.index(2)) # 1
-print(is_tuple.count(1)) # 1
-# print(help(is_tuple))
+x, y = num_tuple
+print(x, y) # 10, 20
 
-is_tuple = ([1, 2, 3], [4, 5, 6]) # ([1, 2, 3], [4, 5, 6])
-print(is_tuple)
-# is_tuple[0] = [1] # TypeError: 'tuple' object does not support item assignment
-is_tuple[0][0] = 100
-print(is_tuple) # [100, 2, 3], [4, 5, 6])
-is_tuple = 1, 2, 3
-print(is_tuple)
-is_tuple = (1,) # tuple
-print(is_tuple) # (1,)
-is_tuple = ('tuple') # str
-print(is_tuple, type(is_tuple)) # tuple str
-is_tuple = ('tuple',)
-print(is_tuple, type(is_tuple)) # tuple tuple
-is_tuple = (1, 2, 3) + (4, 5, 6)
-print(is_tuple, type(is_tuple))
-# is_tuple = is_tuple + 1 # TypeError: can only concatenate tuple (not "int") to tuple
-print(is_tuple)
+min, max = 0, 100
+print(min, max) # 0 100
+is_tuple = 0, 100, 200
+print(type(is_tuple)) # tuple
+
+a, b, c, d, e, f = 'satoru', '1', '1', '1', 'e', 'f'
+# best practice
+a = 'satoru'
+b = '1'
+
+i = 10
+j = 20
+tmp = i # 10
+i = j # 20
+j = tmp # 10
+
+print(i, j)
+
+a = 100
+b = 200
+print(a, b) # 100, 200
+a, b = b, a # 200, 100
+print(a, b) # 200, 100
