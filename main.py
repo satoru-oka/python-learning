@@ -1,27 +1,42 @@
-import math
+# string
+print('hello')
+print("hello")
+print("I don't know")
+print('I don\'t know')
+# single quote
+print('say "I don\'t know"')
+# double-quote
+print("say \"I dont't know\"")
 
-# Executable in CLI
-print(2 + 2)
-print(5 - 2)
-print((5 - 2) * 6)
-print(5 - 2 * 6)
-print(6 * 5 - 2)
-print(5 / 2)
-print(5//2)
-print(5 % 2)
-print(0.6)
-print(.6)
-print(5 * 5)
-print(5 * 5 * 5 * 5 * 5)
-print(5 ** 5)
+print('hello.\nHow are you?')
+print('C:\name\name')
+print(r'C\name\name')
 
-# sqrt
-result = math.sqrt(25)
-print(result)
+# Whitespace removal at line breaks
+print("##########")
+print("""
+line1
+line2
+line3
+""")
+print("##########")
+print("""\
+line1
+line2
+line3\
+""")
+print("##########")
 
-# log2
-log = math.log2(10)
-print(log)
+# Output 'Hi.' 3 times
+print('Hi.' * 3 + 'Mike.')
 
-# help - Documentation of mathematical functions
-print(help(math))
+# parentheses
+s = ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+
+print(s)
+
+# backslash
+y = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' \
+    'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+print(y)
