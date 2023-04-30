@@ -1,32 +1,26 @@
-# string method
-s = 'My name is Satoru. Hi Satoru'
-print(s)
+# list
+list = [1, 2, 3,  4, 5, 6, 7, 8, 9, 10]
+print(list, type(list))
+print(list[0])
+print(list[9])
+print(list[-1])
+print(list[-10])
+print(list[0:2])
+print(list[1:2])
+print(list[3:])
+print(list[:3])
+print(len(list))
+print(list[::2])
+print(list[::-1])
 
-# Is the specified string at the beginning?
-is_start = s.startswith('My')
-print(is_start)
-is_start = s.startswith('name')
-print(is_start)
-print("##########")
-# start
-print(s.find('Satoru'))
-# end
-print(s.rfind('Satoru'))
-print(s.count('Satoru'))
-print(s.capitalize())
-print(s.title())
-print(s.upper())
-print(s.lower())
-print(s.replace('Satoru', 'Oka'))
+list = 'abcdefg'
+print(list)
 
-# python 3.6 f-strings
-a = 'a'
-print(f'a is {a}')
-
-x, y, z = 1, 2, 3
-print(f'a is {x}, {y}, {z}')
-print(f'a is {z}, {y}, {z}')
-
-name = 'Satoru'
-family = 'Oka'
-print(f'My name is {name} {family}.')
+a = ['a', 'b', 'c']
+n = [1, 2, 3]
+x = [a, n]
+print(x)
+print(x[1])
+print(x[0])
+print(x[0][1])
+print(x[0][0])
