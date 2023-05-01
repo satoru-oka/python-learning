@@ -1,18 +1,26 @@
-# tupling positional arguments
-def say_something(word1, word2, word3):
-    print(word1)
-    print(word2)
-    print(word3)
+# key word arg
+def menu(entree='beef', drink='wine'):
+    print(entree, drink)
 
-say_something('a', 'b', 'c')
+menu(entree='beef', drink='coffee')
 
-print('##### tupling positional arguments')
-def say_something_r(word, *args):
-    print('word =', word)
-    for arg in args:
-        print(arg)
+def menu(**kwargs):
+    print(kwargs)
+    for k, v in kwargs.items():
+        print(k, v)
 
-say_something_r('Hi!', 'Mike', 'Nance')
+menu(entree='beef', drink='coffee')
 
-name_tuple = ('Mike', 'Nancy')
-say_something_r('Hi', *name_tuple)
+is_dict = {
+    'entree': 'beef',
+    'drink': 'ice coffee',
+    'desert': 'ice'
+}
+menu(**is_dict)
+
+def menu(food, *args, **kwargs):
+    print(food)
+    print(args)
+    print(kwargs)
+
+menu('banana', 'apple', 'remon', drink='tropical', desert='ice')
