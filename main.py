@@ -1,12 +1,9 @@
-# zip
-days = ['Mon', 'Tue', 'Wed']
-fruits = ['apple', 'banana', 'orange']
-drinks = ['coffee', 'tea', 'beer']
+# Proccessing dictionaries with for statements.
+is_dict = {'x': 100, 'y': 200}
 
-for i in range(len(days)):
-    print(days[i], fruits[i], drinks[i])
+print(is_dict.items())
 
-print("##########")
+for k, v in is_dict.items():
+    print(k, ':', v)
 
-for day, fruits, drinks in zip(days, fruits, drinks):
-    print(day, fruits, drinks)
+help(is_dict)
