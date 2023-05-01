@@ -1,26 +1,13 @@
-# decorator
-def print_more(func):
-    def wrapper(*args, **kwargs):
-        print('func:', func.__name__)
-        print('args:', args)
-        print('kwargs:', kwargs)
-        result = func(*args, **kwargs)
-        print('result:', result)
-        return result
-    return wrapper
+weekly = ['Mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 
-def print_info(func):
-    def wrapper(*args, **kwargs):
-        print('start')
-        result = func(*args, **kwargs)
-        print('end')
-        return result
-    return wrapper
+def change_words(words, func):
+    for word in words:
+        print(func(word))
 
-@print_info
-@print_more
-def add_num(a, b):
-    return a + b
+# def sample_func(word):
+#     return word.capitalize()
 
-r = add_num(10, 20)
-print(r)
+# change_words(weekly, sample_func)
+# sample_func = lambda word: word.capitalize()
+change_words(weekly, lambda word: word.capitalize())
+change_words(weekly, lambda word: word.lower())
