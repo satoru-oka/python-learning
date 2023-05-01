@@ -1,31 +1,18 @@
-# defult arguments
+# tupling positional arguments
+def say_something(word1, word2, word3):
+    print(word1)
+    print(word2)
+    print(word3)
 
-def test_func(x, l=[]):
-    l.append(x)
-    return l
+say_something('a', 'b', 'c')
 
-y = [1, 2, 3]
-r = test_func(100, y)
-print(r) # [1, 2, 3, 100]
+print('##### tupling positional arguments')
+def say_something_r(word, *args):
+    print('word =', word)
+    for arg in args:
+        print(arg)
 
-y = [1, 2, 3]
-r = test_func(200, y)
-print(r) # [1, 2, 3, 200]
+say_something_r('Hi!', 'Mike', 'Nance')
 
-r = test_func(100)
-print(r) # [100]
-
-r = test_func(200)
-print(r) # [100, 200]
-
-def test_func_r(x, l=None):
-    if l is None:
-        l = [];
-    l.append(x)
-    return l
-
-r = test_func_r(100)
-print(r) # [100]
-
-r = test_func_r(200)
-print(r) # [200]
+name_tuple = ('Mike', 'Nancy')
+say_something_r('Hi', *name_tuple)
