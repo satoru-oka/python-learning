@@ -1,15 +1,23 @@
-s = 'aaaaaaaaaaaaaaaa'\
-    + 'bbbbbbbbbbbbbbbbbbbbb'
-print(s) # aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbb
+# if statement
+x = 10
 
-s = ('aaaaaaaaaaaaaaaa'
-    + 'bbbbbbbbbbbbbbbbbbbbb')
-print(s) # aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbb
+if x < 0:
+    print('negative')
+elif x == 0:
+    print('zero')
+elif x == 10:
+    print('10')
+else:
+    print('positive')
 
-x = 1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 \
-    + 1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1
-print(x) # 24
+a = 5
+b = 10
 
-x = (1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1
-    + 1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1 +  1 + 1)
-print(x) # 24
+if a > 0:
+    print('a is positive')
+    if b > 0:
+        print('b is positive')
+    elif b == 10: # I won't make this judgment.
+        print('10')
+    else:
+        print('negative')
