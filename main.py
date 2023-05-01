@@ -1,11 +1,32 @@
-# set inclusion notation
-is_set = set()
+# generator inclusion notation
+def generator():
+    for i in range(10):
+        yield i
+g = generator()
 
-for i in range(10):
-    if i % 2 == 0:
-        is_set.add(i)
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
 
-print(is_set) # {0, 2, 4, 6, 8}
+print('##### generator 1') # generator
+g = (i for i in range(10))
+for x in g:
+    print(x)
 
-is_set = {i for i in range(10) if i % 2 == 0}
-print(is_set) # {0, 2, 4, 6, 8}
+print('##### generator 2')
+g = (i for i in range(10) if i % 2 == 0)
+for x in g:
+    print(x)
+
+
+print('##### tuple') # tuple
+g = tuple(i for i in range(10))
+for x in g:
+    print(x)
