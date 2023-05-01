@@ -1,13 +1,34 @@
-weekly = ['Mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+# generator
+def counter(num=10):
+    for _ in range(num):
+        yield 'run'
 
-def change_words(words, func):
-    for word in words:
-        print(func(word))
+def greeting():
+    yield 'Good morning'
+    # for example
+    # for i in range(10000000000000000):
+    #     print(i)
+    yield 'Good afternoon'
+    yield 'Good night'
 
-# def sample_func(word):
-#     return word.capitalize()
+g = greeting()
+c = counter()
+print(next(g))
+print('@@@@@')
 
-# change_words(weekly, sample_func)
-# sample_func = lambda word: word.capitalize()
-change_words(weekly, lambda word: word.capitalize())
-change_words(weekly, lambda word: word.lower())
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+
+print(next(g))
+print('@@@@@')
+
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+
+print(next(g))
