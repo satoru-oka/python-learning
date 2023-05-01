@@ -1,9 +1,31 @@
-# Definition function arg and return.
+# defult arguments
 
-# num: int = 10 # data type difinition
+def test_func(x, l=[]):
+    l.append(x)
+    return l
 
-def add_num(a: int, b: int) -> int:
-    return a + b
+y = [1, 2, 3]
+r = test_func(100, y)
+print(r) # [1, 2, 3, 100]
 
-r = add_num(10, 10)
-print(r)
+y = [1, 2, 3]
+r = test_func(200, y)
+print(r) # [1, 2, 3, 200]
+
+r = test_func(100)
+print(r) # [100]
+
+r = test_func(200)
+print(r) # [100, 200]
+
+def test_func_r(x, l=None):
+    if l is None:
+        l = [];
+    l.append(x)
+    return l
+
+r = test_func_r(100)
+print(r) # [100]
+
+r = test_func_r(200)
+print(r) # [200]
