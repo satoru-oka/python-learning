@@ -1,11 +1,11 @@
-# dictionary inclusion notation
-date = ['mon', 'tue', 'wed']
-drink = ['coffee', 'milk', 'water']
+# set inclusion notation
+is_set = set()
 
-is_dict = {}
-for x, y in zip(date, drink):
-    is_dict[x] = y
-print(is_dict) # {'mon': 'coffee', 'tue': 'milk', 'wed': 'water'}
+for i in range(10):
+    if i % 2 == 0:
+        is_set.add(i)
 
-is_dict = {x: y for x, y in zip(date, drink)}
-print(is_dict) # {'mon': 'coffee', 'tue': 'milk', 'wed': 'water'}
+print(is_set) # {0, 2, 4, 6, 8}
+
+is_set = {i for i in range(10) if i % 2 == 0}
+print(is_set) # {0, 2, 4, 6, 8}
