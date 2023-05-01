@@ -1,26 +1,13 @@
-# key word arg
-def menu(entree='beef', drink='wine'):
-    print(entree, drink)
+def example_function(param1, param2):
+    """Example function with types documented in the docstring.
 
-menu(entree='beef', drink='coffee')
+    Args:
+        param1 (int): the first parameter.
+        param2 (str): the second parameter.
 
-def menu(**kwargs):
-    print(kwargs)
-    for k, v in kwargs.items():
-        print(k, v)
-
-menu(entree='beef', drink='coffee')
-
-is_dict = {
-    'entree': 'beef',
-    'drink': 'ice coffee',
-    'desert': 'ice'
-}
-menu(**is_dict)
-
-def menu(food, *args, **kwargs):
-    print(food)
-    print(args)
-    print(kwargs)
-
-menu('banana', 'apple', 'remon', drink='tropical', desert='ice')
+    Returns
+        bool: the return value. true for success, false otherwise.
+    """
+    print(param1)
+    print(param2)
+    return True
