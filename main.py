@@ -1,21 +1,19 @@
-# comparison and logical operators
-a = 2
-b = 2
+# In and Not
+y = [1, 2, 3]
+x = 1
 
-# when a and b are equal.
-print(a == b)
+if x in y:
+    print('in') # in
 
-# when a and b are different.
-print(a != b)
+if 100 not in y:
+    print('not in') # not in
 
-# a is less than b
-print(a < b)
+is_ok_1 = True
 
-# a is greater than b
-print(a > b)
+if is_ok_1:
+    print(is_ok_1, type(is_ok_1)) # True <class 'bool'>
 
-# when a is less than or equal to b
-print(a <= b)
+is_ok_2 = False
 
-# when a is greater than or equal to b
-print(a >= b)
+if not is_ok_2:
+    print(is_ok_2, type(is_ok_2)) # False <class 'bool'>
