@@ -1,13 +1,9 @@
-def example_function(param1, param2):
-    """Example function with types documented in the docstring.
+# intra-function
+def outer(a, b):
+    def plus(c, d):
+        return c + d
+    r1 = plus(a, b) # 3
+    r2 = plus(b, a) # 3
+    print(r1 + r2) # 3 + 3
 
-    Args:
-        param1 (int): the first parameter.
-        param2 (str): the second parameter.
-
-    Returns
-        bool: the return value. true for success, false otherwise.
-    """
-    print(param1)
-    print(param2)
-    return True
+outer(1, 2)
