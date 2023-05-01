@@ -1,19 +1,12 @@
-# In and Not
-y = [1, 2, 3]
-x = 1
+# techniques for determining the absence of a value
 
-if x in y:
-    print('in') # in
+# ng - False, 0, 0.0 '', [], (), {}, None
+# ok - -1, 1, [1,], (1,2),{'x': 1}
+is_ok = [1, 2, 3, 4, 5]
+# is_ok = None,
+# is_ok  = {'x': 1, 'y': 2}
 
-if 100 not in y:
-    print('not in') # not in
-
-is_ok_1 = True
-
-if is_ok_1:
-    print(is_ok_1, type(is_ok_1)) # True <class 'bool'>
-
-is_ok_2 = False
-
-if not is_ok_2:
-    print(is_ok_2, type(is_ok_2)) # False <class 'bool'>
+if is_ok:
+    print('ok')
+else:
+    print('ng')
