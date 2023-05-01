@@ -1,23 +1,21 @@
-# if statement
-x = 10
+# comparison and logical operators
+a = 2
+b = 2
 
-if x < 0:
-    print('negative')
-elif x == 0:
-    print('zero')
-elif x == 10:
-    print('10')
-else:
-    print('positive')
+# when a and b are equal.
+print(a == b)
 
-a = 5
-b = 10
+# when a and b are different.
+print(a != b)
 
-if a > 0:
-    print('a is positive')
-    if b > 0:
-        print('b is positive')
-    elif b == 10: # I won't make this judgment.
-        print('10')
-    else:
-        print('negative')
+# a is less than b
+print(a < b)
+
+# a is greater than b
+print(a > b)
+
+# when a is less than or equal to b
+print(a <= b)
+
+# when a is greater than or equal to b
+print(a >= b)
