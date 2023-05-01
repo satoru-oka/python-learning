@@ -1,9 +1,22 @@
-# intra-function
+# closure
 def outer(a, b):
-    def plus(c, d):
-        return c + d
-    r1 = plus(a, b) # 3
-    r2 = plus(b, a) # 3
-    print(r1 + r2) # 3 + 3
+    def inner():
+        return a + b
 
-outer(1, 2)
+    return inner
+
+f = outer(1, 2)
+r = f() # closure
+print(r)
+
+def circle_area_func(pi):
+    def circle_area(radius):
+        return pi * radius * radius
+
+    return circle_area
+
+cal1 = circle_area_func(3.14)
+cal2 = circle_area_func(3.141592)
+
+print(cal1(10)) # closure
+print(cal2(10)) # closure
