@@ -1,12 +1,16 @@
-# techniques for determining the absence of a value
+# is none or is not none
+is_empty = None
 
-# ng - False, 0, 0.0 '', [], (), {}, None
-# ok - -1, 1, [1,], (1,2),{'x': 1}
-is_ok = [1, 2, 3, 4, 5]
-# is_ok = None,
-# is_ok  = {'x': 1, 'y': 2}
-
-if is_ok:
-    print('ok')
+if is_empty is not None:
+    print('Not None')
 else:
-    print('ng')
+    print('None')
+
+if is_empty is None:
+    print('None')
+
+a = 1
+b = 2
+print(a == True) # true
+print(a is True) # false
+print(None is None) # true
