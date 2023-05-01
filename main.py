@@ -1,7 +1,5 @@
-count = 0
-
-while count < 5:
-    print(count)
-    count += 1
-else:
-    print('done')
+while True:
+    word = input('Enter:')
+    if word == 'ok':
+        break
+    print('next')
