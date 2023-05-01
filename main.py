@@ -1,16 +1,16 @@
-# is none or is not none
-is_empty = None
+# while and continue
+count = 0
+while count < 5:
+    print(count)
+    count += 1
 
-if is_empty is not None:
-    print('Not None')
-else:
-    print('None')
-
-if is_empty is None:
-    print('None')
-
-a = 1
-b = 2
-print(a == True) # true
-print(a is True) # false
-print(None is None) # true
+print('##########')
+count = 0
+while True:
+    if count >= 5:
+        break
+    if count == 2:
+        count += 1
+        continue
+    print(count)
+    count += 1
