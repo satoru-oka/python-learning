@@ -1,20 +1,9 @@
-# Function definition
-def say_something():
-    s = 'hi'
-    return s
+# Definition function arg and return.
 
-result = say_something()
-print(result)
+# num: int = 10 # data type difinition
 
-def what_is_this(color):
-    if color == 'red':
-        return 'tomato'
-    elif color == 'green':
-        return 'green pepper'
-    else:
-        return "I don't know"
+def add_num(a: int, b: int) -> int:
+    return a + b
 
-result = what_is_this('red')
-print(result)
-result = what_is_this('black')
-print(result)
+r = add_num(10, 10)
+print(r)
