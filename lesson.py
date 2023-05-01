@@ -1,9 +1,9 @@
-# cli argument
-import sys
+# import lesson_package.utils
+from lesson_package import utils
+# from lesson_package import utils say_twice
 
-print(sys.argv)
+# r = lesson_package.utils.say_twice('hello')
+r = utils.say_twice('hello')
+# r = say_twice('hello')
 
-for i in sys.argv:
-    print(i)
-
-print('Hello')
+print(r)
