@@ -1,16 +1,9 @@
-# How to write import statements
-# build-in library
-import collections
-import os
-import sys
+# __name__ and __main
+import lesson_package.talk.animal
+import main
 
-# third party
-import termcolor
+def main():
+    lesson_package.talk.animal.sing()
 
-# our own library
-import lesson_package
-
-print(collections.__file__)
-print(termcolor.__file__)
-print(lesson_package.__file__)
-print(sys.path)
+if __name__ == '__main__':
+    main()
