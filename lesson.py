@@ -48,3 +48,11 @@ print(tesla_car.model) # model m
 print(tesla_car._enable_auto_run) # True
 tesla_car.run() # super fast
 tesla_car.auto_run() # auto run
+
+# attention
+class T():
+    pass
+
+test = T()
+test.name = 'satoru'
+print(test.name)
