@@ -1,16 +1,16 @@
+# How to write import statements
+# build-in library
+import collections
+import os
 import sys
 
-from termcolor import colored, cprint
+# third party
+import termcolor
 
-text = colored("Hello, World!", "red", attrs=["reverse", "blink"])
-print(text)
-cprint("Hello, World!", "green", "on_red")
+# our own library
+import lesson_package
 
-print_red_on_cyan = lambda x: cprint(x, "red", "on_cyan")
-print_red_on_cyan("Hello, World!")
-print_red_on_cyan("Hello, Universe!")
-
-for i in range(10):
-    cprint(i, "magenta", end=" ")
-
-cprint("Attention!", "red", attrs=["bold"], file=sys.stderr)
+print(collections.__file__)
+print(termcolor.__file__)
+print(lesson_package.__file__)
+print(sys.path)
