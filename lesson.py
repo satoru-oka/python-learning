@@ -1,28 +1,14 @@
-# import lesson_package.utils
-# from lesson_package.tools import utils
-# from lesson_package.talk import human
-# from lesson_package import utils as u
-# from lesson_package import utils say_twice
-# from lesson_package.talk import *
+# build in function
+import builtins
+builtins.globals()
 
-"""
-import error for example.
-Older version is a statement of try, newer version is an except statement.
-"""
-try:
-    from lesson_package import utils
-except ImportError:
-    from lesson_package.tools import utils
+ranking = {
+    'A': 100,
+    'B': 85,
+    'C': 95
+}
 
-utils.say_twice('word')
+for key in ranking:
+    print(key)
 
-# r = lesson_package.utils.say_twice('hello')
-# r = utils.say_twice('hello')
-# r = say_twice('hello')
-
-# print(r)
-# print(human.sing())
-# print(human.cry())
-
-# print(animal.sing())
-# print(animal.cry())
+print(sorted(ranking, key=ranking.get, reverse=True))
