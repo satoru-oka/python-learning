@@ -1,19 +1,21 @@
-# class initialization and class variable(property)
-class Person(object):
-    # holds the value of its own class.
-    # constructor
-    def __init__(self, name):
-        self.name = name
-    def say_something(self):
-        print('I am {}. hello'.format(self.name))
-        self.run(10)
-    def run(self, num):
-        print('run ' * num)
-    #destructor
-    def __del__(self):
-        print('good bye')
+# class inheritance
+class Car(object):
+    def run(self):
+        print('run')
 
-person = Person('satoru')
-person.say_something()
-# del person
-print("@@@@@@@@@@@@@@@")
+class ToyotaCar(Car):
+    pass
+
+class TeslaCar(Car):
+    def auto_run(self):
+        print('auto run')
+
+car = Car()
+car.run()
+print('toyota car ->>>')
+toyota_car = ToyotaCar()
+toyota_car.run()
+print('tesla car ->>>')
+tesla_car = TeslaCar()
+tesla_car.run()
+tesla_car.auto_run()
