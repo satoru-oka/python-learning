@@ -1,33 +1,25 @@
-# class variable
+# class method, static method
+def about(year):
+    print('about human {}'.format(year))
 class Person(object):
+    name = 'satoru'
 
-    kind = 'human'
-    def __init__(self, name):
-        self.name = name
-
-    def who_are_you(self):
-        print(self.name, self.kind)
-
-a = Person('A')
-a.who_are_you() # A human
-b = Person('B')
-b.who_are_you() # B human
-
-class T(object):
     def __init__(self):
-        self.words = []
+        self.x = 100
 
-    def add_word(self, word):
-        self.words.append(word)
+    @classmethod
+    def what_is_your_name(cls):
+        return cls.name
 
-test1 = T()
-test1.add_word('add 1')
-test1.add_word('add 2')
-print(test1)
-print(test1.words) # ['add 1', 'add 2']
+    @staticmethod
+    def about(year):
+        print('about human {}'.format(year))
 
-test2 = T()
-test2.add_word('add 3')
-test2.add_word('add 4')
-print(test2)
-print(test2.words) # ['add 3', 'add 4']
+a = Person()
+print(a.what_is_your_name()) # satoru
+print(a.x) # 100
+print(Person.name) # satoru
+print(Person.what_is_your_name()) # satoru
+
+Person.about(2023) # about human 2023
+about(2023) # about human 2023
