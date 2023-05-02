@@ -1,25 +1,27 @@
-# class method, static method
-def about(year):
-    print('about human {}'.format(year))
-class Person(object):
-    name = 'satoru'
+# special method
+class Word(object):
+    def __init__(self, text):
+        self.text = text
 
-    def __init__(self):
-        self.x = 100
+    def __str__(self):
+        return 'word.'
 
-    @classmethod
-    def what_is_your_name(cls):
-        return cls.name
+    def __len__(self):
+        return len(self.text)
 
-    @staticmethod
-    def about(year):
-        print('about human {}'.format(year))
+    def __add__(self, word):
+        return self.text.lower() + word.text.lower()
 
-a = Person()
-print(a.what_is_your_name()) # satoru
-print(a.x) # 100
-print(Person.name) # satoru
-print(Person.what_is_your_name()) # satoru
+    def __eq__(self, word):
+        return self.text.lower() == word.text.lower()
 
-Person.about(2023) # about human 2023
-about(2023) # about human 2023
+w1 = Word('T')
+w2 = Word('T')
+w3 = Word('text')
+
+print(w3.text) # text
+print(w1) # word.
+print(w2) # word.
+print(len(w1)) # 1
+print(w1 + w2) # tt
+print(w1 == w2) # true
