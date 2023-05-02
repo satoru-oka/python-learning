@@ -1,14 +1,24 @@
-# build in function
-import builtins
-builtins.globals()
+# Built-in Types
+is_string = "falkdfjaeioqrgkja,czm,vnajfhaskl;fqierysa:gjakdf" \
+            "jaslkfajfkljasjfwqeskjadfaskl;jfdfbkjtio"
+is_dict = {}
+for x in is_string:
+    if x not in is_dict:
+        is_dict[x] = 0
+    is_dict[x] += 1
+print(is_dict)
 
-ranking = {
-    'A': 100,
-    'B': 85,
-    'C': 95
-}
+is_dict = {}
+for x in is_string:
+    is_dict.setdefault(x, 0)
+    is_dict[x] += 1
+print(is_dict)
 
-for key in ranking:
-    print(key)
+from collections import defaultdict
 
-print(sorted(ranking, key=ranking.get, reverse=True))
+is_dict = defaultdict(int)
+for x in is_string:
+    is_dict[x] += 1
+print(is_dict)
+
+print(is_dict['f'])
