@@ -1,16 +1,7 @@
-# file read and write
-s = """\
-ABC
-DEF
-GHI
-JKN
-"""
-with open('test.txt', 'w+') as is_file:
-    is_file.write(s)
-    is_file.seek(0) # back to start
-    print(is_file.read())
+import string
 
-with open('test.txt', 'r+') as is_file:
-    print(is_file.read())
-    is_file.seek(0)
-    is_file.write(s)
+with open('design/email_template.txt') as f:
+    tempfile = string.Template(f.read())
+
+contents = tempfile.substitute(name='Satoru', contents='How ar you?')
+print(contents)
