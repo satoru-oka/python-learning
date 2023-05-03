@@ -1,11 +1,16 @@
-# logging
+# filter
 import logging
 
 import loggtest
 
 logging.basicConfig(level=logging.INFO)
 
-logger = logging.getLogger(__name__)
-logger.info('from main')
+class NoPassFilter(logging.Filter):
+    def filter(self, record):
+        log_message = record.getMessage()
+        return 'password' not in log_message
 
-loggtest.do_something()
+logger = logging.getLogger(__name__)
+logger.addFilter(NoPassFilter())
+logger.info('from main')
+logger.info('from main password = "test"')
