@@ -1,21 +1,18 @@
-# file read
+# seek
 s = """\
-AAA
-BBB
-CCC
-DDD
+ABC
+DEF
+GHI
+JKN
 """
 with open('test.txt', 'r') as is_file:
-    while True:
-        chunk = 2
-        line = is_file.read(chunk)
-        print(line)
-        if not line:
-            break
-
-with open('test.txt', 'r') as is_file:
-    while True:
-        line = is_file.readline()
-        print(line, end='')
-        if not line:
-            break
+    # print(is_file.tell())
+    print(is_file.read(1))
+    is_file.seek(1)
+    print(is_file.read(1))
+    is_file.seek(2)
+    print(is_file.read(1))
+    is_file.seek(4)
+    print(is_file.read(1))
+    is_file.seek(8)
+    print(is_file.read(1))
