@@ -1,20 +1,13 @@
-#  tempfile
-import tempfile
+# subprocess
+import os
+import subprocess
 
-with tempfile.TemporaryFile(mode="w+") as tmp:
-    tmp.write('hello')
-    tmp.seek(0)
-    print(tmp.read())
+# os.system('ls')
+# subprocess.run(['ls', '-al'])
+# subprocess.run('ls -al | grep test', shell=True, check=True)
 
-with tempfile.NamedTemporaryFile(delete=False) as tmp:
-    print(tmp.name)
-    with open(tmp.name, 'w+') as file:
-        file.write('test\n')
-        file.seek(0)
-        print(file.read())
-
-with tempfile.TemporaryDirectory() as tmpdir:
-    print(tmpdir)
-
-temp_dir = tempfile.mkdtemp()
-print(temp_dir)
+p1 = subprocess.Popen(['ls', '-al'], stdout=subprocess.PIPE)
+p2 = subprocess.Popen(['grep', 'test'], stdin=p1.stdout, stdout=subprocess.PIPE)
+p1.stdout.close()
+output = p2.communicate()[0]
+print(output)
