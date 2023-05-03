@@ -1,16 +1,15 @@
-# filter
-import logging
+import smtplib
 
-import loggtest
+sender = "Private Person <from@example.com>"
+receiver = "A Test User <to@example.com>"
 
-logging.basicConfig(level=logging.INFO)
+message = f"""\
+Subject: Hi Mailtrap
+To: {receiver}
+From: {sender}
 
-class NoPassFilter(logging.Filter):
-    def filter(self, record):
-        log_message = record.getMessage()
-        return 'password' not in log_message
+This is a test e-mail message."""
 
-logger = logging.getLogger(__name__)
-logger.addFilter(NoPassFilter())
-logger.info('from main')
-logger.info('from main password = "test"')
+with smtplib.SMTP("sandbox.smtp.mailtrap.io", 2525) as server:
+    server.login("1e103b2f592617", "16b59f1cc9efd4")
+    server.sendmail(sender, receiver, message)
