@@ -1,20 +1,14 @@
-# yml
-import yaml
+# logging
+import logging
 
-with open('config.yml', 'w') as yaml_file:
-    yaml.dump({
-        'web_server': {
-            'host': '127.0.0.1',
-            'port': 80
-        },
-        'db_server': {
-            'host': '127.0.0.1',
-            'port': 3306
-        }
-    }, yaml_file)
+logging.basicConfig(filename='text.txt', level=logging.DEBUG)
 
-# print(help(yaml))
-with open('config.yml', 'r') as yaml_file:
-    data = yaml.safe_load(yaml_file)
-    # print(data, type(data))
-    print(data['web_server']['host'])
+logging.critical('critical') # default
+logging.error('error') # default
+logging.warning('warning') # default
+logging.info('info')
+logging.debug('debug')
+
+logging.info('info {}'.format('test'))
+logging.info('info %s %s' % ('test', 'test2'))
+logging.info('info %s %s', 'test', 'test2')
