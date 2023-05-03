@@ -1,15 +1,31 @@
-import smtplib
+# xml
+import xml.etree.ElementTree as ET
 
-sender = "Private Person <from@example.com>"
-receiver = "A Test User <to@example.com>"
+root = ET.Element('root')
+tree = ET.ElementTree(element=root)
 
-message = f"""\
-Subject: Hi Mailtrap
-To: {receiver}
-From: {sender}
+employee = ET.SubElement(root, 'employee')
 
-This is a test e-mail message."""
+employ = ET.SubElement(employee, 'employ')
+employ_id = ET.SubElement(employ, 'id')
+employ_id.text = '111'
+employ_id = ET.SubElement(employ, 'name')
+employ_id.text = 'satoru'
 
-with smtplib.SMTP("sandbox.smtp.mailtrap.io", 2525) as server:
-    server.login("1e103b2f592617", "16b59f1cc9efd4")
-    server.sendmail(sender, receiver, message)
+employ = ET.SubElement(employee, 'employ')
+employ_id = ET.SubElement(employ, 'id')
+employ_id.text = '222'
+employ_id = ET.SubElement(employ, 'name')
+employ_id.text = 'ok@'
+
+tree.write('test.xml', encoding='utf-8', xml_declaration=True)
+
+tree = ET.ElementTree(file='test.xml')
+root = tree.getroot()
+
+for employee in root:
+    for employ in employee:
+        for person in employ:
+            print(person.tag, person.text)
+
+
