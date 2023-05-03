@@ -1,15 +1,20 @@
-# zip
-import glob
-import zipfile
+#  tempfile
+import tempfile
 
-with zipfile.ZipFile('text.zip', 'w') as z:
-    # z.write('test_dir')
-    # z.write('test_dir/test.txt')
-    for f in glob.glob('test_dir/**', recursive=True):
-        print(f)
-        z.write(f)
+with tempfile.TemporaryFile(mode="w+") as tmp:
+    tmp.write('hello')
+    tmp.seek(0)
+    print(tmp.read())
 
-with zipfile.ZipFile('text.zip', 'r') as z:
-    # z.extractall('test_z')
-    with z.open('test_dir/test.txt') as f:
-        print(f.read())
+with tempfile.NamedTemporaryFile(delete=False) as tmp:
+    print(tmp.name)
+    with open(tmp.name, 'w+') as file:
+        file.write('test\n')
+        file.seek(0)
+        print(file.read())
+
+with tempfile.TemporaryDirectory() as tmpdir:
+    print(tmpdir)
+
+temp_dir = tempfile.mkdtemp()
+print(temp_dir)
