@@ -1,18 +1,16 @@
-# seek
+# file read and write
 s = """\
 ABC
 DEF
 GHI
 JKN
 """
-with open('test.txt', 'r') as is_file:
-    # print(is_file.tell())
-    print(is_file.read(1))
-    is_file.seek(1)
-    print(is_file.read(1))
-    is_file.seek(2)
-    print(is_file.read(1))
-    is_file.seek(4)
-    print(is_file.read(1))
-    is_file.seek(8)
-    print(is_file.read(1))
+with open('test.txt', 'w+') as is_file:
+    is_file.write(s)
+    is_file.seek(0) # back to start
+    print(is_file.read())
+
+with open('test.txt', 'r+') as is_file:
+    print(is_file.read())
+    is_file.seek(0)
+    is_file.write(s)
