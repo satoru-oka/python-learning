@@ -1,26 +1,12 @@
-import sqlite3
+import mysql.connector
 
-# conn = sqlite3.connect('test_sqlite.db')
-conn = sqlite3.connect(':memory:')
+conn = mysql.connector.connect(host='127.0.0.1')
 
-curs = conn.cursor()
-curs.execute(
-    'CREATE TABLE persons(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING)'
-    )
-# conn.commit()
-# curs.execute(
-#     'INSERT INTO persons(name) values("satoru")'
-# )
+cursor = conn.cursor()
 
-# curs.execute('INSERT INTO persons(name) values("SATORU")')
-# curs.execute('INSERT INTO persons(name) values("OK@")')
+cursor.execute(
+    'CREATE DATABASE test_mysql_database'
+)
 
-# curs.execute('UPDATE persons set name = "satoru oka" WHERE name = "SATORU"')
-curs.execute('DELETE FROM persons WHERE name = "satoru oka"')
-
-conn.commit()
-curs.execute('SELECT * FROM persons')
-print(curs.fetchall())
-
-curs.close()
+cursor.close()
 conn.close()
