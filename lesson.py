@@ -1,12 +1,23 @@
-import mysql.connector
+# doctest
+class Cal(object):
+    def add_num_and_double(self, x, y):
+        """Add and double
 
-conn = mysql.connector.connect(host='127.0.0.1')
+        >>> c = Cal()
+        >>> c.add_num_and_double(1, 1)
+        4
 
-cursor = conn.cursor()
+        >>> c.add_num_and_double('1', '1')
+        Traceback (most recent call last):
+        ...
+        ValueError
+        """
+        if type(x) is not int or type(y) is not int:
+            raise ValueError
+        result = x + y
+        result *= 2
+        return  result
 
-cursor.execute(
-    'CREATE DATABASE test_mysql_database'
-)
-
-cursor.close()
-conn.close()
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
