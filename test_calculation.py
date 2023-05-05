@@ -3,15 +3,20 @@ import unittest
 import caluculation
 
 class CalTest(unittest.TestCase):
-    def test_add_num_and_double(self):
-        cal = caluculation.Cal()
-        self.assertEqual(cal.add_num_and_dobule(1, 1), 4)
+    def setUp(self):
+        print('setup')
+        self.cal = caluculation.Cal()
 
+    def tearDown(self):
+        print('clean up')
+        del self.cal
+
+    def test_add_num_and_double(self):
+        self.assertEqual(self.cal.add_num_and_double(1, 1), 4)
 
     def test_add_num_and_double_raise(self):
-        cal = caluculation.Cal()
         with self.assertRaises(ValueError):
-            cal.add_num_and_dobule('1', '1')
+            self.cal.add_num_and_double('1', '1')
 
 # CLI
 if __name__ == '__main__':
